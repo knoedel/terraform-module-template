@@ -18,12 +18,13 @@ jobs:
           terraform_version: 1.0.0
           terraform_wrapper: false
 
-      - uses: actions/setup-go@v2
+      - name: Setup Go
+        uses: actions/setup-go@v2
         with:
           go-version: '^1.16'
 
-      - name: terraform-docs
-        uses: terraform-docs/gh-actions@v0.6.1
-
-      - name: pre-commit
+      - name: Run Checks
         uses: pre-commit/action@v2.0.3
+
+      - name: Run Terraform Tests
+        run: scripts/make-test
