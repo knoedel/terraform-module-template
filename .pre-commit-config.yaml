@@ -28,8 +28,8 @@ repos:
   - repo: git://github.com/antonbabenko/pre-commit-terraform
     rev: v1.50.0
     hooks:
-      - id: terraform_docs
       - id: terraform_fmt
+      - id: terraform_validate
 
   - repo: git://github.com/golangci/golangci-lint
     rev: v1.41.1
