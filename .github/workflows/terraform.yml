@@ -18,6 +18,9 @@ jobs:
           terraform_version: 1.0.0
           terraform_wrapper: false
 
+      - name: Terraform Init
+        run: terraform init
+
       - name: Install terraform-docs
         uses: jaxxstorm/action-install-gh-release@v1.2.0
         with:
