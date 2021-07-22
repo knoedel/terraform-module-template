@@ -31,6 +31,15 @@ jobs:
         with:
           go-version: '^1.16'
 
+      - name: set PY
+        run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
+
+      - name: cache pre-commit
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
+
       - name: Run Checks
         uses: pre-commit/action@v2.0.3
 
