@@ -2,4 +2,4 @@ module github.com/knoedel/terraform-module-template
 
 go 1.16
 
-require github.com/gruntwork-io/terratest v0.43.7
+require github.com/gruntwork-io/terratest v0.43.8
